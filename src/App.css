@@ -1,12 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
 #root {
+    /* centering */
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
+    /* palette */
+    background-color: #b90000;
+    color: #FFF;
 }
 
 #App {
     width: 300px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+#timer-wrapper {
+    text-align: center;
+}
+
+#timer-wrapper > button {
+    font-size: 40px;
+    margin-top: 25px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    color: #FFF;
 }
 
 #timer-length {
@@ -16,14 +44,52 @@
 .length-control {
     width: 50%;
     text-align: center;
+    font-size: 18px;
+}
+
+.length-control > button {
+    font-size: 26px;
 }
 
 #break-length, #session-length {
     display: inline;
-    padding-right: 3px;
-    padding-left: 3px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 24px;
 }
 
 #timer {
     text-align: center;
+    border: #330000 4px solid;
+    margin-top: 25px;
+    padding-top: 6px;
+    padding-bottom: 15px;
+    border-radius: 50px;
+    width: 100%;
+}
+
+#timer h2 {
+    margin: 5px
+}
+
+#timer #time-left {
+    font-family: Orbitron, sans-serif;
+    font-size: 48px;
+    margin-top: -3px;
+}
+
+#footer {
+    margin-top: 50px;
+}
+
+a {
+    color: #00BB00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #007700;
+    text-decoration: underline;
+    font-weight: bold;
 }
