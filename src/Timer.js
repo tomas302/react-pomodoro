@@ -21,10 +21,17 @@ class TimerLengthControl extends Component {
 
 export default class Timer extends Component {
     render() {
-        return <div id="timer">
+        return <div>
             <h1>Pomodoro Clock</h1>
             <TimerLengthControl />
-
+            <div id="timer">
+                <h2 id="timer-label">Session</h2>
+                <div id="time-left">
+                    25:00
+                </div>
+                <button id="start_stop">Start</button>
+                <button id="reset">Reset</button>
+            </div>
         </div>;
     }
 }
