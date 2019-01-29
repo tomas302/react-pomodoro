@@ -90,7 +90,13 @@ export default class Timer extends Component {
     }
 
     phaseControl() {
-        
+        if (this.state.timer === -1) {
+            this.setState({
+                timer: (this.state.timerType === SESSION) ? this.state.breakLength * 60 : this.state.sessionLength * 60,
+                timerType: (this.state.timerType === SESSION) ? BREAK : SESSION
+            });
+            this.audioBeep.play();
+        }
     }
 
     reset() {
@@ -100,8 +106,11 @@ export default class Timer extends Component {
             timer: 1500,
             sessionLength: 25,
             breakLength: 5,
-            running: false
+            running: false,
+            timerType: SESSION
         });
+        this.audioBeep.pause();
+        this.audioBeep.currentTime = 0;
     }
     
     clockify() {
@@ -179,13 +188,16 @@ export default class Timer extends Component {
                 />
             </div>
             <div id="timer">
-                <h2 id="timer-label">Session</h2>
+                <h2 id="timer-label">{ (this.state.timerType === SESSION) ? "Session" : "Break" }</h2>
                 <div id="time-left">
                     { this.clockify() }
                 </div>
             </div>
             <button id="start_stop" onClick={ this.startStop }>{ this.startStopButton() }</button>
             <button id="reset" onClick={ this.reset }><i title="Reset" class="fas fa-sync-alt"></i></button>
+            <audio id="beep" preload="auto" 
+                src="https://goo.gl/65cBl1"
+                ref={(audio) => { this.audioBeep = audio; }} />
             <div id="footer">Coded by <a rel="noopener noreferrer" target="_blank" href="https://github.com/tomas302">tomas302</a></div>
         </div>;
     }
