@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-const playButton = <i title="Start" class="fas fa-play"></i>;
-const pauseButton = <i title="Stop" class="fas fa-pause"></i>;
+const playButton = <i title="Start" className="fas fa-play"></i>;
+const pauseButton = <i title="Stop" className="fas fa-pause"></i>;
 
 // Timer Types
 const SESSION = 0;
@@ -34,11 +34,11 @@ const accurateInterval = function(fn, time) {
 
 class TimerLengthControl extends Component {
     render() {
-        return <div class="length-control">
+        return <div className="length-control">
                     <div id={ this.props.class + "-label" }>{ this.props.label } Length</div>
-                    <button id={ this.props.class + "-decrement"} onClick={ this.props.clickDecrement }><i class="fas fa-arrow-down"></i></button>
+                    <button id={ this.props.class + "-decrement"} onClick={ this.props.clickDecrement }><i className="fas fa-arrow-down"></i></button>
                     <div id={ this.props.class + "-length"}>{ this.props.length }</div>
-                    <button id={ this.props.class + "-increment"} onClick={ this.props.clickIncrement }><i class="fas fa-arrow-up"></i></button>
+                    <button id={ this.props.class + "-increment"} onClick={ this.props.clickIncrement }><i className="fas fa-arrow-up"></i></button>
                 </div>;
     }
 }
@@ -194,7 +194,7 @@ export default class Timer extends Component {
                 </div>
             </div>
             <button id="start_stop" onClick={ this.startStop }>{ this.startStopButton() }</button>
-            <button id="reset" onClick={ this.reset }><i title="Reset" class="fas fa-sync-alt"></i></button>
+            <button id="reset" onClick={ this.reset }><i title="Reset" className="fas fa-sync-alt"></i></button>
             <audio id="beep" preload="auto" 
                 src="https://goo.gl/65cBl1"
                 ref={(audio) => { this.audioBeep = audio; }} />
